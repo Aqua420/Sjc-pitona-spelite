@@ -1,3 +1,4 @@
+from calendar import c
 from tkinter import *
 import random
 canvas_width = 900
@@ -9,8 +10,9 @@ w = Canvas(master,
 master.title("Līnijas spēle")
 
 
-
+# KOMENTĀRI!!! 
 w.pack()
+c
 x1=300
 y1=300
 x2=150
@@ -22,6 +24,7 @@ g=100
 def clicked(event):
     print("pressed")
     e=30
+    w.create_image(50,400, image = bilde)
 
 #SPĒLES ELEMENTI (8 krāsu maiņas eleemtni / 5 biezuma maiņas)
 b = w.create_line(300, 270, 300, 260, width=10, fill='red')
@@ -30,8 +33,8 @@ w.create_line(300, 150, 300, 160, width=10, fill='green')
 w.create_line(300, 200, 300, 190, width=10, fill='black')
 w.create_line(300, 120, 300, 130, width=10, fill='brown')
 w.create_line(300, 400, 300, 410, width=10, fill='orange')
-bilde = PhotoImage(file="")
-pika = PhotoImage(file="")
+bilde = PhotoImage(file="SPELES_arhivs\pika.ppm")
+pika = PhotoImage(file="SPELES_arhivs\semene.ppm")
 w.create_image(50,400, image = bilde)
 player = w.create_image(0,0, image = pika)
 w.delete(player)
@@ -68,6 +71,7 @@ def uzaugsu():
 #d variants (pa labi)
 def palabi():
     global x1, y1, x2, y2, e, f, c, player
+    w.delete(c)
     w.delete(player)
     x2=x1+10
     y2=y1+0
